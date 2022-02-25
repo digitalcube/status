@@ -32,7 +32,7 @@ export default function Home({ posts }: UpdatesProps) {
 
       <Nav />
 
-      <main>
+      <main className='px-6'>
         <Container>
           <Posts posts={posts} per_page={1} />
         </Container>

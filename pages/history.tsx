@@ -8,7 +8,7 @@ export default function History() {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
-        <title>Status History</title>
+        <title>Shifter Status History</title>
         <link rel="icon" href="/shifter.svg" />
         <meta property="og:title" content="Shifter Status History" />
         <meta property="og:type" content="website" />
@@ -21,7 +21,7 @@ export default function History() {
 
       <Nav />
 
-      <main>
+      <main className='px-6'>
         <Container>
           <Updates />
         </Container>

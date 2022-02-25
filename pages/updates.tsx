@@ -27,7 +27,7 @@ export default function Updates({ posts }: UpdatesProps) {
 
       <Nav />
 
-      <main>
+      <main className='px-6'>
         <Posts title="Changelog" posts={posts} />
       </main>
 

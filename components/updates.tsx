@@ -6,8 +6,8 @@ export interface PostProps {
 
 function Post({ title, content }: PostProps) {
   return (
-    <article className="mt-4 mb-1 rounded p-2 shadow-md">
-      <h3>{title}</h3>
+    <article className="my-5 rounded p-2 shadow-md">
+      <h2>{title}</h2>
       {content}
     </article>
   )
