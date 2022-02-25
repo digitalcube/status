@@ -1,4 +1,4 @@
-import Container from '../components/container'
+import Container from './container'
 
 export interface PostProps {
   title?: string
@@ -14,15 +14,15 @@ function Post({ title, content }: PostProps) {
   )
 }
 
-export interface ChangelogsProps {
-  posts: any
+export interface PostsProps {
+  posts?: any
+  title?: string
 }
 
-export default function Changelog({ posts }: ChangelogsProps) {
+export default function Posts({ posts, title }: PostsProps) {
   return (
     <Container>
-      <h1 className="mb-8 text-center text-3xl">Changelog</h1>
-
+      <h1 className="mb-8 text-center text-3xl">{title}</h1>
       {posts.map((post: any, i: number) => {
         return (
           <Post
@@ -36,6 +36,6 @@ export default function Changelog({ posts }: ChangelogsProps) {
   )
 }
 
-Changelog.defaultProps = {
+Posts.defaultProps = {
   posts: [],
 }

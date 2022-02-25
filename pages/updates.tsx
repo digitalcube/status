@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Nav from '../components/nav'
-import Changelog from '../components/changelog'
+import Posts from '../components/posts'
 import Footer from '../components/footer'
 
 const siteID = process.env.NEXT_PUBLIC_HEADLESS_SITE_ID
@@ -17,9 +17,9 @@ export default function Updates({ posts }: UpdatesProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
-        <title>Shifter Changelog</title>
+        <title>Shifter Posts</title>
         <link rel="icon" href="/shifter.svg" />
-        <meta property='og:title' content='Shifter Changelog Updates' />
+        <meta property='og:title' content='Shifter Posts Updates' />
         <meta property='og:type' content='website' />
         <meta property='og:image' content='/shifter.svg' />
         <meta property='og:url' content='https://dev-status-getshifter.netlify.app/updates/' />
@@ -28,7 +28,7 @@ export default function Updates({ posts }: UpdatesProps) {
       <Nav />
 
       <main>
-        <Changelog posts={posts} />
+        <Posts title="Changelog" posts={posts} />
       </main>
 
       <Footer />

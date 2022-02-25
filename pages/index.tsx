@@ -4,8 +4,18 @@ import Services from '../components/services'
 import Status from '../components/status'
 import Footer from '../components/footer'
 import Container from '../components/container'
+import Posts from '../components/posts'
 
-export default function Home() {
+const siteID = process.env.NEXT_PUBLIC_HEADLESS_SITE_ID
+const headlessURL = `hl-b.getshifter.co`
+const baseURL = `https://${siteID}.${headlessURL}`
+const restURL = `${baseURL}/wp-json/wp/v2`
+
+export interface UpdatesProps {
+  posts?: Record<string, unknown>
+}
+
+export default function Home({ posts }: UpdatesProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Head>
@@ -24,6 +34,9 @@ export default function Home() {
 
       <main>
         <Container>
+          <Posts posts={posts} per_page={1} />
+        </Container>
+        <Container>
           <Status />
         </Container>
         <Container>
@@ -34,4 +47,14 @@ export default function Home() {
       <Footer />
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`${restURL}/posts?category=4`)
+  const posts = await res.json()
+  return {
+    props: {
+      posts,
+    },
+  }
 }
