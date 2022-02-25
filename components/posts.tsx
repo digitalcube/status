@@ -6,21 +6,22 @@ export interface PostProps {
 function Post({ title, content }: PostProps) {
   return (
     <article className="container mx-auto my-5">
-      <h2 className="font-bold">{title}</h2>
+      <h2 className="pb-4 text-xl font-bold">{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: `${content}` }} />
     </article>
   )
 }
 
-export interface ChangelogsProps {
-  posts: any
+export interface PostsProps {
+  posts?: any
+  title?: string
+  per_page?: number
 }
 
-export default function Changelog({ posts }: ChangelogsProps) {
+export default function Posts({ posts, title }: PostsProps) {
   return (
-    <section className="pb-6">
-      <h1 className="text-center text-3xl mb-8">Changelog</h1>
-      
+    <>
+      <h1 className="mb-8 text-3xl font-bold">{title}</h1>
       {posts.map((post: any, i: number) => {
         return (
           <Post
@@ -30,10 +31,10 @@ export default function Changelog({ posts }: ChangelogsProps) {
           />
         )
       })}
-    </section>
+    </>
   )
 }
 
-Changelog.defaultProps = {
+Posts.defaultProps = {
   posts: [],
 }
