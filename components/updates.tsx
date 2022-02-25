@@ -21,8 +21,8 @@ export default function Updates() {
   return (
     <section className="w-full pb-6">
       <h1 className="text-center text-3xl">Status History</h1>
-      {lastThirtyDays.map((item) => {
-        return <Post title={`${item._d}`} />
+      {lastThirtyDays.map((item, i) => {
+        return <Post key={i} title={`${item}`} />
       })}
     </section>
   )
