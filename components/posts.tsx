@@ -1,5 +1,3 @@
-import Container from './container'
-
 export interface PostProps {
   title?: string
   content?: string
@@ -8,7 +6,7 @@ export interface PostProps {
 function Post({ title, content }: PostProps) {
   return (
     <article className="container mx-auto my-5">
-      <h2 className="font-bold">{title}</h2>
+      <h2 className="pb-4 text-xl font-bold">{title}</h2>
       <div dangerouslySetInnerHTML={{ __html: `${content}` }} />
     </article>
   )
@@ -23,7 +21,7 @@ export interface PostsProps {
 export default function Posts({ posts, title }: PostsProps) {
   return (
     <>
-      <h1 className="mb-8 text-3xl">{title}</h1>
+      <h1 className="mb-8 text-3xl font-bold">{title}</h1>
       {posts.map((post: any, i: number) => {
         return (
           <Post
