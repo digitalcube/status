@@ -17,6 +17,7 @@ function Post({ title, content }: PostProps) {
 export interface PostsProps {
   posts?: any
   title?: string
+  per_page?: number
 }
 
 export default function Posts({ posts, title }: PostsProps) {
