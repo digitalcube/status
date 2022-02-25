@@ -1,3 +1,5 @@
+import Container from '../components/container'
+
 export interface PostProps {
   title?: string
   content?: string
@@ -18,9 +20,9 @@ export interface ChangelogsProps {
 
 export default function Changelog({ posts }: ChangelogsProps) {
   return (
-    <section className="pb-6">
-      <h1 className="text-center text-3xl mb-8">Changelog</h1>
-      
+    <Container>
+      <h1 className="mb-8 text-center text-3xl">Changelog</h1>
+
       {posts.map((post: any, i: number) => {
         return (
           <Post
@@ -30,7 +32,7 @@ export default function Changelog({ posts }: ChangelogsProps) {
           />
         )
       })}
-    </section>
+    </Container>
   )
 }
 

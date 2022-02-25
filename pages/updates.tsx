@@ -27,7 +27,7 @@ export default function Updates({ posts }: UpdatesProps) {
 
       <Nav />
 
-      <main className="flex w-full flex-1 flex-col items-center px-6 sm:px-20">
+      <main>
         <Changelog posts={posts} />
       </main>
 

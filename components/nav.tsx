@@ -1,8 +1,7 @@
+import Container from '../components/container'
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-
-import { useRouter } from 'next/router';
-
+import { useRouter } from 'next/router'
 
 const navigation = [
   { name: 'System Status', href: '/', current: true },
@@ -21,13 +20,13 @@ function classNames(...classes: any) {
 }
 
 export default function Example() {
-  const router = useRouter();
+  const router = useRouter()
 
   return (
     <Disclosure as="nav" className="w-full">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <Container>
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -46,14 +45,14 @@ export default function Example() {
                     <img
                       className="block h-8 w-auto lg:hidden"
                       src="/shifter.svg"
-                      alt="Workflow"
+                      alt="Shifter"
                     />
                   </a>
                   <a href="/">
                     <img
                       className="hidden h-8 w-auto lg:block"
                       src="/shifter.svg"
-                      alt="Workflow"
+                      alt="Shifter"
                     />
                   </a>
                 </div>
@@ -66,11 +65,13 @@ export default function Example() {
                         target={item.target}
                         className={classNames(
                           router.pathname == `${item.href}`
-                            ? 'bg-gray-900 text-white'
-                            : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            ? 'bg-purple-primary text-white'
+                            : 'text-gray-300 hover:text-gray-900',
                           'rounded-md px-3 py-2 text-sm font-medium'
                         )}
-                        aria-current={router.pathname == `${item.href}` ? 'page' : undefined} //
+                        aria-current={
+                          router.pathname == `${item.href}` ? 'page' : undefined
+                        }
                       >
                         {item.name}
                       </a>
@@ -79,7 +80,7 @@ export default function Example() {
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
