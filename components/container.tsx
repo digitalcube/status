@@ -8,5 +8,5 @@ export default function Container({ className, children }: ContainerProps) {
 }
 
 Container.defaultProps = {
-  className: 'container mx-auto',
+  className: 'container mx-auto px-6',
 }

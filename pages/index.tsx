@@ -32,7 +32,7 @@ export default function Home({ posts }: UpdatesProps) {
 
       <Nav />
 
-      <main className="px-6">
+      <main>
         <Container>
           <Status />
         </Container>

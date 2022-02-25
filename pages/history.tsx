@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Nav from '../components/nav'
-import Updates from '../components/updates'
+import Updates from '../components/history'
 import Footer from '../components/footer'
 import Container from '../components/container'
 
@@ -21,7 +21,7 @@ export default function History() {
 
       <Nav />
 
-      <main className='px-6'>
+      <main>
         <Container>
           <Updates />
         </Container>
