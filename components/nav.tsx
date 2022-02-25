@@ -43,14 +43,14 @@ export default function Example() {
                 <div className="flex flex-shrink-0 items-center">
                   <a href="/">
                     <img
-                      className="block h-8 w-auto lg:hidden"
+                      className="block h-8 w-auto sm:ml-4 lg:hidden"
                       src="/shifter.svg"
                       alt="Shifter"
                     />
                   </a>
                   <a href="/">
                     <img
-                      className="hidden h-8 w-auto lg:block"
+                      className="hidden h-8 w-auto lg:block lg:ml-4"
                       src="/shifter.svg"
                       alt="Shifter"
                     />
