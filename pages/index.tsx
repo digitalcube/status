@@ -28,6 +28,7 @@ export default function Home({ posts }: UpdatesProps) {
           property="og:url"
           content="https://dev-status-getshifter.netlify.app"
         />
+        <link rel="stylesheet" href="https://use.typekit.net/rrt0shs.css" />
       </Head>
 
       <Nav />

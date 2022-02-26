@@ -25,7 +25,7 @@ export default function Example() {
   const router = useRouter()
 
   return (
-    <Disclosure as="nav" className="container mx-auto w-full px-6 pb-6">
+    <Disclosure as="nav" className="container mx-auto w-full px-6 py-6">
       {({ open }) => (
         <>
           <div className="relative flex h-16 items-center justify-between">
@@ -66,8 +66,8 @@ export default function Example() {
                       className={classNames(
                         router.pathname == `${item.href}`
                           ? 'bg-purple-primary text-white'
-                          : 'text-gray-300 hover:text-gray-900',
-                        'rounded-md px-3 py-2 text-sm font-medium'
+                          : 'text-purple-500 hover:text-gray-900',
+                        'rounded-md px-3 py-2 text-md font-bold'
                       )}
                       aria-current={
                         router.pathname == `${item.href}` ? 'page' : undefined
