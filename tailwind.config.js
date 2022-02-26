@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['sofia-pro', 'sans-serif'],
+      },
       colors: {
         status: {
           success: {
@@ -15,6 +18,16 @@ module.exports = {
         },
         purple: {
           primary: `#892885`,
+          900: `#431441`,
+          800: `#521850`,
+          700: `#671E64`,
+          600: `#7B2478`,
+          500: `#892885`,
+          400: `#AC69AA`,
+          300: `#D0A9CE`,
+          200: `#D0A9CE`,
+          100: `#F3EAF3`,
+          50: `#F9F4F9`,
         },
         gray: {
           900: '#231F21',
