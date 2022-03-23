@@ -33,7 +33,7 @@ export default function Home({ posts }: UpdatesProps) {
 
       <Nav />
 
-      <main>
+      <main className="mx-auto w-full lg:w-5/6">
         <Container>
           <Status />
         </Container>
@@ -42,7 +42,8 @@ export default function Home({ posts }: UpdatesProps) {
         </Container>
       </main>
 
-      <Footer />
+        <Footer />
+
     </div>
   )
 }

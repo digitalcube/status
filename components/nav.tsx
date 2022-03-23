@@ -7,8 +7,7 @@ import { useRouter } from 'next/router'
 
 const navigation = [
   { name: 'System Status', href: '/', current: true },
-  { name: 'Status History', href: '/history', current: false },
-  { name: 'Updates', href: '/updates', current: false },
+  { name: 'Changelog', href: '/updates', current: false },
   {
     name: 'www.getshifter.io',
     href: 'https://www.getshifter.io/',
@@ -25,7 +24,10 @@ export default function Example() {
   const router = useRouter()
 
   return (
-    <Disclosure as="nav" className="container mx-auto w-full px-6 py-6">
+    <Disclosure
+      as="nav"
+      className="container mx-auto w-full px-6 py-6 lg:w-5/6"
+    >
       {({ open }) => (
         <>
           <div className="relative flex h-16 items-center justify-between">
@@ -39,7 +41,7 @@ export default function Example() {
                 )}
               </Disclosure.Button>
             </div>
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
               <div className="flex flex-shrink-0 items-center">
                 <a className="lg:hidden" href="/">
                   <img
@@ -63,11 +65,11 @@ export default function Example() {
                       key={item.name}
                       href={item.href}
                       target={item.target}
-                      className={classNames(
+                      className={classNames(                      
                         router.pathname == `${item.href}`
-                          ? 'bg-purple-primary text-white'
-                          : 'text-purple-500 hover:text-gray-900',
-                        'rounded-md px-3 py-2 text-md font-bold'
+                          ? 'text-purple-primary'
+                          : 'bg-white text-gray-900 hover:text-purple-500',
+                        'text-md rounded-md px-3 py-2 font-bold'
                       )}
                       aria-current={
                         router.pathname == `${item.href}` ? 'page' : undefined

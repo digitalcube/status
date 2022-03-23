@@ -1,18 +1,41 @@
 export interface FooterProps {
   year?: string
   title?: string
+  by?: string
+  byImage?: string
   navigation?: any
 }
-export default function Footer({ year, navigation, title }: FooterProps) {
+export default function Footer({ year, navigation, by, byImage, title }: FooterProps) {
   return (
-    <footer className="bg-white">
-      <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-        <nav
-          className="-mx-5 -my-2 flex flex-wrap justify-center"
-          aria-label="Footer"
-        >
-          {navigation.main.map((item: any) => (
-            <div key={item.name} className="px-5 py-2">
+    <footer className="mx-auto flex flex-wrap bg-white py-12 px-6 lg:w-5/6">
+      <div className="flex w-full flex-wrap justify-between md:flex-nowrap">
+        <div className="flex flex-wrap justify-between md:w-1/4 md:mr-4">
+          <h2 className="mb-4 w-full text-center text-xl font-bold md:text-left">
+            Say Hello
+          </h2>
+          <div className="my-4 flex w-full justify-center md:justify-start">
+            {navigation.social.map((item: any) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-400 hover:text-gray-500"
+              >
+                <span className="sr-only">{item.name}</span>
+                <item.icon
+                  className="mr-2 h-8 w-8 md:h-6 md:w-6"
+                  aria-hidden="true"
+                />
+              </a>
+            ))}
+          </div>
+          <button className="mx-auto my-4 h-12 w-44 rounded bg-purple-primary text-white md:mx-0">
+            Join our newsletter
+          </button>
+        </div>
+
+        <div className="flex w-1/2 flex-wrap md:w-1/5">
+          {navigation.company.map((item: any) => (
+            <div key={item.name} className="w-full px-5 py-2">
               <a
                 href={item.href}
                 className="text-base text-gray-500 hover:text-gray-900"
@@ -21,34 +44,89 @@ export default function Footer({ year, navigation, title }: FooterProps) {
               </a>
             </div>
           ))}
-        </nav>
-        <div className="mt-8 flex justify-center space-x-6">
-          {navigation.social.map((item: any) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-gray-400 hover:text-gray-500"
-            >
-              <span className="sr-only">{item.name}</span>
-              <item.icon className="h-6 w-6" aria-hidden="true" />
-            </a>
+        </div>
+
+        <div className="flex w-1/2 flex-wrap md:w-1/5">
+          {navigation.product.map((item: any) => (
+            <div key={item.name} className="w-full px-5 py-2">
+              <a
+                href={item.href}
+                className="text-base text-gray-500 hover:text-gray-900"
+              >
+                {item.name}
+              </a>
+            </div>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">
+
+        <div className="flex w-1/2 flex-wrap md:w-1/5">
+          {navigation.resources.map((item: any) => (
+            <div key={item.name} className="w-full px-5 py-2">
+              <a
+                href={item.href}
+                className="text-base text-gray-500 hover:text-gray-900"
+              >
+                {item.name}
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex w-1/2 flex-wrap md:w-1/5">
+          {navigation.legal.map((item: any) => (
+            <div key={item.name} className="w-full px-5 py-2">
+              <a
+                href={item.href}
+                className="text-base text-gray-500 hover:text-gray-900"
+              >
+                {item.name}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-8 flex w-full flex-wrap md:flex-nowrap">
+        <p className="w-full text-center md:w-1/4 md:text-left md:text-base lg:w-1/5">
           &copy; {year} {title}
         </p>
+        <div className="flex w-full justify-center md:justify-start">
+          <p className="ml-2 text-center md:text-base">{by}</p>
+          <img src={byImage} alt="" className="mx-2 mt-1 h-5" />
+        </div>
       </div>
     </footer>
   )
 }
 
 const navigation = {
-  main: [
-    { name: 'Home', href: 'https://www.getshifter.io/' },
+  company: [
     { name: 'Blog', href: 'https://www.getshifter.io/blog/' },
+    { name: 'About', href: 'https://www.getshifter.io/' },
     { name: 'Press', href: 'https://www.getshifter.io/press/' },
+  ],
+  product: [
+    { name: 'Pricing', href: 'https://www.getshifter.io/pricing/' },
+    { name: 'Features', href: 'https://www.getshifter.io/features/' },
+    { name: 'Showcase', href: 'https://www.getshifter.io/showcase/' },
+  ],
+  resources: [
     { name: 'Docs', href: 'https://support.getshifter.io/' },
-    { name: 'GitHub', href: 'https://github.com/getshifter' },
+    {
+      name: 'Getting Started',
+      href: 'https://support.getshifter.io/en/collections/1394546-creating-sites-on-shifter',
+    },
+    { name: 'Open Source', href: 'https://developer.getshifter.io/' },
+  ],
+  legal: [
+    {
+      name: 'Terms of Service',
+      href: 'https://www.getshifter.io/terms-of-service/',
+    },
+    {
+      name: 'Privacy Policy',
+      href: 'https://www.getshifter.io/privacy-policy/',
+    },
   ],
   social: [
     {
@@ -105,5 +183,7 @@ const navigation = {
 Footer.defaultProps = {
   title: 'Shifter',
   year: '2022',
+  by: 'A product by ',
+  byImage: '/DigitalCube-logo.svg',
   navigation: navigation,
 }
