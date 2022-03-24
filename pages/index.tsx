@@ -4,6 +4,7 @@ import Services from '../components/services'
 import Status from '../components/status'
 import Footer from '../components/footer'
 import Container from '../components/container'
+import History from '../components/history'
 import Posts from '../components/posts'
 
 const siteID = process.env.NEXT_PUBLIC_HEADLESS_SITE_ID
@@ -39,6 +40,9 @@ export default function Home({ posts }: UpdatesProps) {
         </Container>
         <Container>
           <Services />
+        </Container>
+        <Container>
+          <History />
         </Container>
       </main>
 

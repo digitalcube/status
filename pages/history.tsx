@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Nav from '../components/nav'
-import Updates from '../components/history'
+import Updates from '../components/updates'
 import Footer from '../components/footer'
 import Container from '../components/container'
 
