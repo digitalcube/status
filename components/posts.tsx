@@ -5,10 +5,12 @@ export interface PostProps {
 
 function Post({ title, content }: PostProps) {
   return (
-    <article className="container mx-auto my-5">
-      <h2 className="pb-4 text-xl font-bold">{title}</h2>
-      <div dangerouslySetInnerHTML={{ __html: `${content}` }} />
-    </article>
+    <div className="w-full border-b-2">
+      <article className="container my-5 pb-4 md:w-2/3 xl:w-1/2">
+        <h2 className="pb-4 text-xl font-bold">{title}</h2>
+        <div dangerouslySetInnerHTML={{ __html: `${content}` }} />
+      </article>
+    </div>
   )
 }
 
