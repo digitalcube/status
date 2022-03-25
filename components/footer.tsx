@@ -90,7 +90,7 @@ export default function Footer({ year, navigation, by, byImage, title }: FooterP
         </div>
       </div>
 
-      <div className="mt-8 flex w-full flex-wrap md:flex-nowrap">
+      <div className="mt-8 flex w-full flex-wrap md:flex-nowrap md:mt-14">
         <p className="w-full text-center md:w-1/4 md:text-left md:text-base lg:w-1/5">
           &copy; {year} {title}
         </p>

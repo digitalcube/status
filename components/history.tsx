@@ -21,7 +21,7 @@ export default function History({ percentUp, days, content }: HistoryProps) {
 
   return (
     <section className="rounded border-2">
-      <h2 className="w-full rounded border-b-2 py-2 px-4 font-semibold hover:text-purple-primary">
+      <h2 className="w-full border-b-2 py-2 px-4 font-semibold hover:text-purple-primary">
         <a href="/history">Status History</a>
       </h2>
       <div className="flex h-auto flex-wrap md:flex-nowrap">
@@ -37,7 +37,7 @@ export default function History({ percentUp, days, content }: HistoryProps) {
         </div>
 
         <div className="w-full md:w-1/2">
-          <div className="my-4 mx-auto w-5/6 border-2">
+          <div className="my-4 mx-auto w-5/6 border-2 rounded">
             <div className="flex justify-between">
               <h3 className="px-4 py-2 font-semibold">Date</h3>
               <h3 className="px-4 py-2 font-semibold">Reported Issues</h3>

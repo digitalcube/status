@@ -66,7 +66,7 @@ export default function Example() {
                         item.name == 'getshifter.io'
                           ? 'bg-purple-primary text-white border border-white'
                           : 'bg-white',
-                        'text-md rounded-md py-2.5'
+                        'text-md rounded-lg py-2.5'
                       )}
                     >
                       <a
@@ -77,7 +77,7 @@ export default function Example() {
                           router.pathname == `${item.href}`
                             ? 'text-purple-primary'
                             : 'hover:text-purple-500 hover:bg-white hover:border-2',
-                          'text-md rounded-md px-3 py-3 font-bold border-2 border-white'
+                          'text-md rounded-lg px-3 py-3 font-bold border-2 border-white'
                         )}
                         aria-current={
                           router.pathname == `${item.href}` ? 'page' : undefined

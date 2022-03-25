@@ -4,9 +4,9 @@ export interface StatusProps {
 }
 export default function Status({ source, title }: StatusProps) {
   return (
-    <div className="my-4 flex h-12 justify-center rounded bg-status-success-light md:mx-2">
+    <div className="my-4 flex h-14 justify-center rounded bg-status-success-light md:mx-2">
       <img src={source} alt="" className="w-6" />
-      <p className="pt-2 px-2 text-center text-xl md:w-1/3 md:px-0 md:pt-1 md:text-2xl">
+      <p className="pt-3 px-2 text-center text-xl md:w-1/3 md:px-0 md:pt-2.5 md:text-2xl">
         {title}
       </p>
     </div>
