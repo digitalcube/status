@@ -9,7 +9,7 @@ const navigation = [
   { name: 'System Status', href: '/', current: true },
   { name: 'Changelog', href: '/updates', current: false },
   {
-    name: 'www.getshifter.io',
+    name: 'getshifter.io',
     href: 'https://www.getshifter.io/',
     current: false,
     target: '_blank',
@@ -61,22 +61,31 @@ export default function Example() {
               <div className="hidden sm:ml-6 sm:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      target={item.target}
-                      className={classNames(                      
-                        router.pathname == `${item.href}`
-                          ? 'text-purple-primary'
-                          : 'bg-white text-gray-900 hover:text-purple-500',
-                        'text-md rounded-md px-3 py-2 font-bold'
+                    <div
+                      className={classNames(
+                        item.name == 'getshifter.io'
+                          ? 'bg-purple-primary text-white border border-white'
+                          : 'bg-white',
+                        'text-md rounded-md py-2.5'
                       )}
-                      aria-current={
-                        router.pathname == `${item.href}` ? 'page' : undefined
-                      }
                     >
-                      {item.name}
-                    </a>
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        target={item.target}
+                        className={classNames(
+                          router.pathname == `${item.href}`
+                            ? 'text-purple-primary'
+                            : 'hover:text-purple-500 hover:bg-white hover:border-2',
+                          'text-md rounded-md px-3 py-3 font-bold border-2 border-white'
+                        )}
+                        aria-current={
+                          router.pathname == `${item.href}` ? 'page' : undefined
+                        }
+                      >
+                        {item.name}
+                      </a>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -92,8 +101,8 @@ export default function Example() {
                   href={item.href}
                   className={classNames(
                     router.pathname == `${item.href}`
-                      ? 'bg-gray-900 text-white'
-                      : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      ? 'bg-purple-primary text-white'
+                      : 'text-gray-500 hover:text-purple-primary',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}

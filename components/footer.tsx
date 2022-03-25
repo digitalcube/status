@@ -9,7 +9,7 @@ export default function Footer({ year, navigation, by, byImage, title }: FooterP
   return (
     <footer className="mx-auto flex flex-wrap bg-white py-12 px-6 lg:w-5/6">
       <div className="flex w-full flex-wrap justify-between md:flex-nowrap">
-        <div className="flex flex-wrap justify-between md:w-1/4 md:mr-4">
+        <div className="flex flex-wrap justify-between md:mr-4 md:w-1/4">
           <h2 className="mb-4 w-full text-center text-xl font-bold md:text-left">
             Say Hello
           </h2>
@@ -33,7 +33,8 @@ export default function Footer({ year, navigation, by, byImage, title }: FooterP
           </button>
         </div>
 
-        <div className="flex w-1/2 flex-wrap md:w-1/5">
+        <div className="flex w-1/2 flex-wrap my-4 md:w-1/5 md:my-0">
+          <h2 className="w-full px-5 py-2 text-lg font-semibold">Company</h2>
           {navigation.company.map((item: any) => (
             <div key={item.name} className="w-full px-5 py-2">
               <a
@@ -46,7 +47,8 @@ export default function Footer({ year, navigation, by, byImage, title }: FooterP
           ))}
         </div>
 
-        <div className="flex w-1/2 flex-wrap md:w-1/5">
+        <div className="flex w-1/2 flex-wrap my-4 md:w-1/5 md:my-0">
+          <h2 className="w-full px-5 py-2 text-lg font-semibold">Product</h2>
           {navigation.product.map((item: any) => (
             <div key={item.name} className="w-full px-5 py-2">
               <a
@@ -59,7 +61,8 @@ export default function Footer({ year, navigation, by, byImage, title }: FooterP
           ))}
         </div>
 
-        <div className="flex w-1/2 flex-wrap md:w-1/5">
+        <div className="flex w-1/2 flex-wrap my-4 md:w-1/5 md:my-0">
+          <h2 className="w-full px-5 py-2 text-lg font-semibold">Resources</h2>
           {navigation.resources.map((item: any) => (
             <div key={item.name} className="w-full px-5 py-2">
               <a
@@ -72,7 +75,8 @@ export default function Footer({ year, navigation, by, byImage, title }: FooterP
           ))}
         </div>
 
-        <div className="flex w-1/2 flex-wrap md:w-1/5">
+        <div className="flex w-1/2 flex-wrap my-4 md:w-1/5 md:my-0">
+          <h2 className="w-full px-5 py-2 text-lg font-semibold">Legal</h2>
           {navigation.legal.map((item: any) => (
             <div key={item.name} className="w-full px-5 py-2">
               <a

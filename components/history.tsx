@@ -39,8 +39,8 @@ export default function History({ percentUp, days, content }: HistoryProps) {
         <div className="w-full md:w-1/2">
           <div className="my-4 mx-auto w-5/6 border-2">
             <div className="flex justify-between">
-              <h3 className="px-4 py-2">Date</h3>
-              <h3 className="px-4 py-2">Reported Issues</h3>
+              <h3 className="px-4 py-2 font-semibold">Date</h3>
+              <h3 className="px-4 py-2 font-semibold">Reported Issues</h3>
             </div>
             <DayLines lines={pastWeek} />
           </div>

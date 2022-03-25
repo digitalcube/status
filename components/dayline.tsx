@@ -7,7 +7,7 @@ function DayLine({ days, content }: DayLineProps) {
   return (
     <div className="flex justify-between border-t-2 p-2">
       <p className="w-1/2 md:w-2/3">{days}</p>
-      <p>{content}</p>
+      <p className="w-1/5">{content}</p>
     </div>
   )
 }
